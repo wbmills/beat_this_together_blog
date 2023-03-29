@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block title %}
+    Beat this Together Blog
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid bg-light text-black">
+    <h1>Beat this Together</h1></div>
+    <img src="{% static "/images/Logo.jpg" %}",
+                                width="462px",
+                                height="353",
+                                class="rounded float-right",
+                                alt="Logo"/>
+
+    <div class="container-fluid my-2 border">
+    <p>Current Members:</p>
+    <ul>
+        {% for x in mymembers %}
+        <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+        {% endfor %}
+    </ul>
+    </div>
+
+    <div class="container-fluid my-2 border">
+    Randomly generated complement of the day:
+    <p> You are such a {{ word }} person!</p>
+    </div>
+
+    <div class="container-fluid my-2 border">
+    <p>Enter your name below to sign up!</p>
+    <form action="" method="POST">
+        <label for="fname">First name:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname" name="lname"><br><br>
+    <input type="submit" value="Sign Up">
+    </form>
+    </div>
+    {% include "footer.html" with me=word%}
+{% endblock %}
+
