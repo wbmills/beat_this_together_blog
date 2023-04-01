@@ -1,0 +1,78 @@
+{% extends "master.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container my-5">
+    <div class="container-sm my-3 d-flex justify-content-center border-top border-bottom" style="width:40%">
+        <h3 style="padding:5%"><i>Fighting for Eating Disorder awareness, body positivity, and better student well-being</i></h3>
+    </div>
+        <div class="row h-100">
+            <div class="col-6 my-3">
+                <div class="border border-dark bg-transparent rounded align-self-center" style="height:100%">
+                <h4><p style="padding-top:5%">Latest Blog Post</p></h4>
+                <a href="blog/{{ post.id }}">
+                    <img src="{% static post.image %}"
+                    width=80%
+                    height=60%/>
+                    <h3><p style="padding-top:5%; padding-left:5%; padding-right:5%;">{{ post.title }}</p></h3>
+                <h6>{{ content }}</h6></a>
+                </div>
+
+            </div>
+            <div class="col-6 my-3">
+                <div class="border border-dark bg-transparent rounded" style="height:100%">
+                <h4><p style="padding-top:5%">Featured Blog Post</p></h4>
+                <a href="blog/{{ fpost.id }}">
+                    <img src="{% static fpost.image %}"
+                    width=80%
+                    height=60%/>
+                    <h3><p style="padding-top:5%; padding-left:5%; padding-right:5%;">{{ fpost.title }}</p></h3>
+                <h6>{{ content }}</h6></a>
+                </div>
+            </div>
+            </div>
+        <div class="row">
+        <div class="col my-3 d-flex justify-content-center">
+            <div class="bg-transparent" style="width:50%">
+            <h3><a href="blog/">Find the rest of our blog posts here...</a></h3>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="row h-100">
+    <div class="col-8">
+        <div class="container-sm my-2 border rounded justify-content-center" style="height:100%; width:80%; padding-right:0; margin-right:0">
+        <h3 style="text-align: center">Who We Are</h3>
+        <h4><p>Beat This Together is the student face for Beat (the UK’s largest eating disorder charity) at the
+            University of Bristol.</p> <p>We participate in campaigning and fundraising for Beat, as well as running a range of
+        educational and wellbeing events.</p><p>This helps us to promote positive mental health and body image among our
+            community, all while increasing the the conversation around eating disorders and weight stigma.</p>
+        </h4>
+    </div>
+    </div>
+        <div class="col-4">
+            <div class="container-sm my-2 border rounded justify-content-center" style="height:100%; width:60%; padding-left:0; margin-left:0"">
+        <p><h3 style="text-align: center">What We Do</h3></p>
+        <h4 style="text-align: center">
+            <ul>
+            <li>Body Positivity Talks</li>
+            <li>Fundraising for Beat Uk</li>
+            <li>Raising awareness</li>
+            </ul>
+        </h4>
+        </div>
+        </div>
+    </div>
+    </div>
+    </div>
+<div class="row my-5">
+<div class="col my-3 d-flex justify-content-center">
+    <h4>Find us on the SU Website:&nbsp</h4>
+        <form action="https://www.bristolsu.org.uk/groups/beat-this-together-2c86">
+            <input type="submit" value="BTT Bristol Soc" class="btn btn-secondary"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
+

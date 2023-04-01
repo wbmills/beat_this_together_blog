@@ -5,10 +5,7 @@ from random import randint
 from .models import Member, Entry, Author
 import os
 
-
-def members(request):
-    return HttpResponse("Hello World!")
-
+theme = "bg-light"
 
 def blogItem(request, id):
     """
@@ -20,40 +17,39 @@ def blogItem(request, id):
     """
     
     blog = Entry.objects.get(id=id)
-    content = blog.content
+    content = blog.content.replace("â€™", "'").replace("â€˜", "'").replace("â€œ", '"')
     return render(request, "blog.html", context={"blog":blog,
-                                                 "content":content})
+                                                 "c":content,
+                                                 "theme":theme})
 
 
 def blogIndex(request):
     files = []
-    blogs = Entry.objects.all().values()
+    blogs = Entry.objects.all().values().order_by("-pub_date")
     for file in os.listdir("static"):
         if file.endswith(".txt"):
             files.append(file)
-    return render(request, "blogIndex.html", context={"files": blogs})
+    return render(request, "blogIndex.html", context={"files": blogs,
+                                                      "theme":theme})
 
 
 def about(request):
-    return render(request, "about.html", context={})
+    return render(request, "about.html", context={"theme":theme})
 
 
-def hello(request):
-    wordList = ["lovely", "beautiful", "funny"]
-    rand = randint(0, len(wordList) - 1)
-    word = wordList[rand]
-    m = Member.objects.all().values()
-    if request.method == 'POST':
-        if request.POST.get('title') and request.POST.get('content'):
-            post = Member()
-            post.firstname = request.POST.get('fname')
-            post.lastname = request.POST.get('lname')
-            post.save()
-    return render(request, 'names.html', context={"word": word,
-                                                  "mymembers": m})  # context must be dict
+def home(request):
+    post = Entry.objects.latest("pub_date")
+    content = "Click the link to read more..."
+
+    fpost = Entry.objects.get(title="Coping with Calorie Legislation: How to deal with unhelpful information on menus")
+    return render(request, 'home.html', context={"theme":theme,
+                                                 "post":post,
+                                                 "content":content,
+                                                 "fpost":fpost})  # context must be dict
 
 
 def details(request, id):
     m = Member.objects.get(id=id)
-    c = {"member": m}
+    c = {"member": m,
+         "theme":theme}
     return render(request, "details.html", context=c)

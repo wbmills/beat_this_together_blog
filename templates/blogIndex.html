@@ -1,29 +1,26 @@
 {% extends "master.html" %}
 {% load static %}
 
-{%  block title %}
-Blog
-{% endblock %}
-
 {% block content %}
-    <h1>Blog</h1>
-    <p>We are Beat this Together</p>
-
     <div class="container-fluid">
     <div class="row">
+    <div class="col-2">
+        <p>Filter By...</p>
+    </div>
+    <div class="col-md-auto p-0">
+    <div class="row no gutters">
     {% for file in files %}
-        <div class="column">
-        <div class="container-sm>">
-            <img src="{% static file.image %}",
-            class="img_thumbnail",
-            width="200",
-            height="200"/>
-            <p><a href="blog/{{ file.id }}">{{ file.title }}</a></p>
+        <div class="col col-xs col-sm-6 col-md-6 col-lg-4 my-4 align-self-center d-flex justify-content-center">
+        <div class="container-fluid m-3 d-flex justify-content-center align-items-center" style="margin-top:10%;">
+            <a href="blog/{{ file.id }}"><img src="{% static file.image %}" alt="No Image"
+            class="rounded-circle"
+            width="400" height="400" style="object-fit: cover; padding-top:5%"/>
+            <h5 style="padding-left:15%; padding-right:15%">{{ file.title }}</h5></a>
         </div>
         </div>
     {% endfor %}
-
     </div>
     </div>
-    {% include "footer.html" with me="Login"%}
+    </div>
+    </div>
 {% endblock %}
