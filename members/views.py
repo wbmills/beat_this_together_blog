@@ -23,8 +23,11 @@ def blogItem(request, id):
                                                  "theme":theme})
 
 
-def blogIndex(request, filter):
-    blogs = Entry.objects.all().values().order_by("-pub_date").filter(tag=filter)
+def blogIndex(request, filter=None):
+    if filter:
+        blogs = Entry.objects.all().values().order_by("-pub_date").filter(tag=filter)
+    else:
+        blogs = Entry.objects.all().values().order_by("-pub_date")
     return render(request, "blogIndex.html", context={"files": blogs,
                                                       "theme":theme})
 
