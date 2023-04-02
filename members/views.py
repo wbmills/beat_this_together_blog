@@ -23,12 +23,8 @@ def blogItem(request, id):
                                                  "theme":theme})
 
 
-def blogIndex(request):
-    files = []
-    blogs = Entry.objects.all().values().order_by("-pub_date")
-    for file in os.listdir("static"):
-        if file.endswith(".txt"):
-            files.append(file)
+def blogIndex(request, filter):
+    blogs = Entry.objects.all().values().order_by("-pub_date").filter(tag=filter)
     return render(request, "blogIndex.html", context={"files": blogs,
                                                       "theme":theme})
 
