@@ -12,9 +12,9 @@
     {% for file in files %}
         <div class="col col-xs col-sm-6 col-md-6 col-lg-4 my-4 align-self-center d-flex justify-content-center">
         <div class="container-fluid m-3 d-flex justify-content-center align-items-center" style="margin-top:10%;">
-            <a href="blog/{{ file.id }}"><img src="{% static file.image %}" alt="No Image"
-            class="rounded-circle"
-            width="400" height="400" style="object-fit: cover; padding-top:5%"/>
+            <a href="blog/{{ file.id }}"><img src="{% static file.image %}" alt="Image Not Found"
+            class="img img-responsive full-height rounded-circle" style="object-fit: cover; padding-top:5%;"
+            width="100%" height="100%" style="overflow:hidden; padding-bottom:100%"/>
             <h5 style="padding-left:15%; padding-right:15%">{{ file.title }}</h5></a>
         </div>
         </div>
