@@ -7,6 +7,9 @@ import os
 
 theme = "bg-light"
 
+def resources(request):
+    return render(request, 'resources.html', context={})
+
 def blogItem(request, id):
     """
     f = open("static/" + file.title, "r", encoding="utf-8")

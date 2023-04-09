@@ -2,6 +2,25 @@
 <div lang="en">
 {% load static %}
 <style>
+    .colContent{
+      padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    }
+    .collapsible {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+    }
+
     p, div. h1, h2, h3, h4 {
         font-family: 'Nobile', Helvetica, Arial, sans-serif;
     }
@@ -57,6 +76,7 @@
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/about">About</a>
       <a class="nav-link" href="/blogIndex">Blog</a>
+      <a class="nav-link" href="/resources">Resources</a>
   </ul>
 
 <div class="row d-sm-none d-md-block text-center mt-5" style="background:transparent url({% static "/images/banner.jpg" %}) center;
