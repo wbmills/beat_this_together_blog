@@ -11,14 +11,14 @@
     <div class="container-fluid border-top border-bottom py-5", style="text-align: center;">
         <div class="row h-100 d-flex">
     <!-- For big screens -->
-        <div class="col-md-2 d-none d-md-block">
+        <div class="col-md-3 d-none d-md-block">
             <a href={{ link.link }}> {{ link.title }}</a>
         </div>
 
-        <div class="col-md-7 d-none d-md-block">
+        <div class="col-md-9 d-none d-md-block">
             <a href={{ link.link }}> {{ link.description|safe }}</a>
         </div>
-
+    <!--
         <div class="col-md-3 d-none d-md-block">
             <a href={{ link.link }}>
                 <a href={{ link.link }}>
@@ -26,13 +26,13 @@
                 </a>
             </a>
         </div>
+        -->
     <!-- For small screens -->
         <div class="col-12 d-block d-md-none">
             <a href={{ link.link }}>
-                <img src="{% static link.image.path %}" class="img-thumbnail" style="border:0;"/>
+                <h3>{{ link.title }}</h3>
             </a>
         </div>
-
         <div class="col-12 d-block d-md-none">
             <a href={{ link.link }}>
                 {{ link.description|safe }}
