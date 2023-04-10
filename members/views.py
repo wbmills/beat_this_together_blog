@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
 from random import randint
-from .models import Member, Entry, Author
+from .models import Member, Entry, Author, Tags
 import os
 
 theme = "bg-light"
@@ -28,7 +28,8 @@ def blogItem(request, id):
 
 def blogIndex(request, filter=None):
     if filter:
-        blogs = Entry.objects.all().values().order_by("-pub_date").filter(tag=filter)
+        t = Tags.objects.get(tag=filter)
+        blogs = Entry.objects.all().values().order_by("-pub_date").filter(tags=t)
     else:
         blogs = Entry.objects.all().values().order_by("-pub_date")
     return render(request, "blogIndex.html", context={"files": blogs,
