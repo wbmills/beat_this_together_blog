@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from datetime import date
 
 class Member(models.Model):
@@ -20,6 +21,18 @@ class Tags(models.Model):
 
   def __str__(self):
     return self.tag
+
+
+class UsefulLinks(models.Model):
+  title = models.CharField(max_length=100)
+  description = models.TextField()
+  last_updated = models.DateField(default = timezone.now())
+  link = models.URLField(max_length=400)
+  tag = models.ManyToManyField(Tags, blank=True)
+  image = models.ImageField(upload_to="static/link-images/", default="image.jpg")
+
+  def __str__(self):
+    return self.title
 
 class Entry(models.Model):
   title = models.CharField(max_length=225)

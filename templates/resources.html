@@ -5,23 +5,35 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container-fluid text-center">
-    <div class="row">
-        <div class="col">
-            <h4>
-            <ul style="list-style: none;">
-                <li><a href="https://www.beateatingdisorders.org.uk/">Beat UK</a></li>
-                <li><a href="https://www.mind.org.uk/">Mind</a></li>
-                <li><a href="https://www.nhs.uk/mental-health/feelings-symptoms-behaviours/behaviours/eating-disorders
-                /overview/">NHS - Eating Disorders</a></li>
-            </ul>
-            </h4>
+    <div class="container-fluid">
+
+    {% for link in links %}
+    <div class="container-fluid border-top border-bottom py-5", style="text-align: center;">
+    <div class="row h-100 d-flex">
+    <!-- For big screens -->
+        <div class="col-md-2 d-none d-md-block">
+            <a href={{ link.link }}> {{ link.title }} </a>
         </div>
-        <div class="row">
-        <div class="col">
-            <h2>More resources will be available soon.</h2>
+
+        <div class="col-md-7 d-none d-md-block">
+            {{ link.description|safe }}
         </div>
+
+        <div class="col-md-3 d-none d-md-block">
+            <img src="{% static link.image.path %}" class="img-thumbnail" style="border:0;"/>
         </div>
+    <!-- For small screens -->
+        <div class="col-12 d-block d-md-none">
+            <a href={{ link.link }}> <img src="{% static link.image.path %}" class="img-thumbnail" style="border:0;"/>
+            </a>
+        </div>
+
+        <div class="col-12 d-block d-md-none">
+            {{ link.description|safe }}
+        </div>
+
     </div>
+    </div>
+    {% endfor %}
     </div>
 {% endblock %}

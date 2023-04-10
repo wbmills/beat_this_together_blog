@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
 from random import randint
-from .models import Member, Entry, Author, Tags
+from .models import Member, Entry, Author, Tags, UsefulLinks
 import os
 
 theme = "bg-light"
 
 def resources(request):
-    return render(request, 'resources.html', context={})
+    links = UsefulLinks.objects.all()
+    return render(request, 'resources.html', context={'links': links})
 
 def blogItem(request, id):
     """
