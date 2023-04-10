@@ -2,13 +2,14 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
 from random import randint
-from .models import Member, Entry, Author, Tags, UsefulLinks
+from .models import Member, Entry, Author, Tags, UsefulLinks, Videos
 import os
 
 theme = "bg-light"
 
 def videos(request):
-    c = {}
+    content = Videos.objects.all()
+    c = {"content":content}
     return render(request, 'videos.html', context=c)
 
 

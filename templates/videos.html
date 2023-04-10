@@ -3,4 +3,9 @@
 
 {% block content %}
     <h1>Videos</h1>
+    {% for video in content %}
+    <div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src={{ video.link }} allowfullscreen></iframe>
+    </div>
+    {% endfor %}
 {% endblock %}
