@@ -71,7 +71,7 @@
 </head>
 <body>
 <div class="container-fluid">
-  <ul class="navbar fixed-top navbar-expand-lg bg-white opacity-75" style="background:transparent">
+  <ul class="navbar fixed-top navbar-expand bg-white opacity-75" style="background:transparent">
       <a class="topnav-right" href="/"><img src="{% static "/images/Logo.jpg" %}" width="50" height="40"/></a>
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/about">About</a>
@@ -79,14 +79,14 @@
       <a class="nav-link" href="/resources">Resources</a>
   </ul>
 
-<div class="row d-xs-none d-md-block text-center mt-5" style="background:transparent url({% static "/images/banner.jpg" %}) center;
+<div class="row d-none d-sm-none d-md-block text-center mt-5" style="background:transparent url({% static "/images/banner.jpg" %}) center;
         height:100%;">
 <div class="col text-center h-100">
 <img src="{% static "/images/Logo_no_bg.png" %}" alt="Logo" class="img-fluid" width="20%" height="100%" style="object-fit: cover;"/>
 </div>
 </div>
 
-<div class="row d-xs-block d-md-none text-center mt-5">
+<div class="row d-block d-sm-block d-md-none text-center mt-5">
     <div class="col text-center h-100">
         <img src="{% static "/images/Logo_no_bg.png" %}" alt="Logo" class="img-fluid" width="75%" height="100%" style="object-fit: cover;"/>
     </div>
