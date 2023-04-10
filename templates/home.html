@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block content %}
-    <div class="container my-5 justify-content-center">
-    <div class="container-sm my-3 border-top border-bottom ">
+    <div class="container my-5 justify-content-center" style="background:white; opacity:70%">
+    <div class="container-sm my-3 border-top border-bottom">
         <h3 style="padding:5%"><i>Fighting for Eating Disorder awareness, body positivity, and better student well-being</i></h3>
     </div>
         <div class="row h-100 no-gutters">
             <div class="col col-12 col-sm-12 col-md-6 col-lg col-xl-6 d-flex my-3">
                 <div class="container-fluid bg-transparent rounded h-100 align-items-center">
-                    <h4><b><p style="padding-top:5%">Latest Blog Post</p></b></h4>
-                <a href="blog/{{ post.id }}">
+                    <a href="blog/{{ post.id }}">
+                        <h4><b><p style="padding-top:5%">Latest Blog Post</p></b></h4>
                     <img src="{% static post.image %}" class="img-fluid rounded-circle" style="object-fit: cover"
                          height="100%"/>
                     <div class="container-fluid px-5">
@@ -20,8 +20,8 @@
             </div>
             <div class="col col-12 col-sm-12 col-md-6 col-lg col-xl-6 d-flex my-3">
                 <div class="container-fluid bg-transparent rounded h-100 align-items-center">
-                    <h4><p style="padding-top:5%"><b>Featured Blog Post</b></p></h4>
-                <a href="blog/{{ fpost.id }}">
+                    <a href="blog/{{ fpost.id }}">
+                        <h4><p style="padding-top:5%"><b>Featured Blog Post</b></p></h4>
                     <img src="{% static fpost.image %}" class="img-fluid rounded-circle" style="object-fit: cover"
                          height="100%"/>
                     <div class="container-fluid px-5">
@@ -33,13 +33,16 @@
     </div>
     <div class="container-fluid border-top">
     <div class="row no-gutters justify-content-center align-items-center my-5">
-    <div class="col col-sm-2 col-md-3 col-lg-3 col-xl-3 d-flex" style="height:100%;">
-        <div class="container-fluid mx-5 my-5 py-3">
-            <h1><b>Who We Are</b></h1>
-        </div>
+
+    <div class="col-md-4 d-none d-md-block"> <!--For the left pointing arrow-->
+        <h1><b>Who We Are</b></h1>
+        <img src={% static '/images/arrow_down.png' %}/ style="width:40%; height:40%">
     </div>
 
-    <div class="col col-sm-10 col-md-9 col-lg-9 col-xl-9 d-flex" style="height:100%;">
+    <div class="col-12 w-100 d-md-none"> <!--For the down pointing arrow-->
+        <h1><b>Who We Are</b></h1>
+    </div>
+    <div class="col col-md-8" style="height:100%;">
         <div class="container-fluid">
             <h4><p>Beat This Together is the student face for Beat (the UK’s largest eating disorder charity) at the
             University of Bristol.</p> <p>We participate in campaigning and fundraising for Beat, as well as running a range of
@@ -50,7 +53,7 @@
     </div>
     </div>
 
-<div class="row my-5 ">
+<div class="row my-5">
 <div class="col my-3 d-flex justify-content-center">
     <h4>Find us on the SU Website:&nbsp</h4>
         <form action="https://www.bristolsu.org.uk/groups/beat-this-together-2c86">
