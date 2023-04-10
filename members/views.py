@@ -26,8 +26,8 @@ def blogItem(request, id):
                                                  "theme":theme})
 
 
-def blogIndex(request, filter=None):
-    if filter:
+def blogIndex(request, filter = "None"):
+    if filter != "None":
         t = Tags.objects.get(tag=filter)
         blogs = Entry.objects.all().values().order_by("-pub_date").filter(tags=t)
     else:
