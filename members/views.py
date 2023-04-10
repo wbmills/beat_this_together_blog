@@ -7,6 +7,11 @@ import os
 
 theme = "bg-light"
 
+def videos(request):
+    c = {}
+    return render(request, 'videos.html', context=c)
+
+
 def resources(request):
     links = UsefulLinks.objects.all()
     return render(request, 'resources.html', context={'links': links})

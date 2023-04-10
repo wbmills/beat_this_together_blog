@@ -34,6 +34,18 @@ class UsefulLinks(models.Model):
   def __str__(self):
     return self.title
 
+
+class Videos(models.Model):
+  title = models.CharField(max_length=225)
+  description = models.TextField()
+  pub_date = models.DateField()
+  link = models.URLField(max_length=400)
+  tags = models.ManyToManyField(Tags, blank=True)
+
+  def __str__(self):
+    return self.title
+
+
 class Entry(models.Model):
   title = models.CharField(max_length=225)
   content = models.TextField()
