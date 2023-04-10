@@ -23,6 +23,15 @@ class Entry(models.Model):
   mod_date = models.DateField(default=date.today())
   image = models.CharField(max_length=100)
   author = models.CharField(max_length=100, default="Anonymous")
+  # tags = models.ManyToManyField(tags, blank=True)
 
   def __str__(self):
     return self.title
+
+"""
+class tags(models.Model):
+  tag = models.CharField(max_length=50)
+
+  def __str__(self):
+    return self.tag
+"""

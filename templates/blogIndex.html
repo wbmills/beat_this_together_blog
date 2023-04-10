@@ -13,6 +13,7 @@
             <option value="activity and engagement">Activity and Engagement</option>
             <option value="none">None</option>
         </select>
+        <button id="button">Filter</button>
 
     </div>
     </div>
@@ -32,4 +33,15 @@
     </div>
     </div>
     </div>
+
+    <script>
+        let x = document.getElementById("button");
+        x.addEventListener('click', filterRedirect);
+
+        function filterRedirect(){
+            let y = document.getElementById('filter').value;
+            //var text = y.options[y.selectedIndex];
+            location.href = 'blogIndex/' + y;
+        }
+    </script>
 {% endblock %}
