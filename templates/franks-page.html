@@ -1,0 +1,13 @@
+{% extends 'masterMeal.html' %}
+{% load static %}
+
+{% block title %}
+Frank's Secret Page
+{% endblock %}
+
+{% block content %}
+    <p style="font-size:30px">Quite frankly, frank is frankin. Frank on.</p>
+    {% for x in files %}
+    <img src="{% static x.image.path %}" alt="missing" style="max-height: 400px; max-width: 250px"/>
+    {% endfor %}
+{% endblock %}

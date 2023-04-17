@@ -1,0 +1,84 @@
+{% extends 'masterMeal.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+
+    <div class="row h-100 no-gutter justify-content-center" style="height:20%">
+        <div class="col-4">
+            <select name="filter by" id="filter">
+                {% for tag in tags %}
+                    <option value={{ tag }}>{{ tag }}</option>
+                {% endfor %}
+        </select>
+        <button id="button">Filter</button>
+        </div>
+
+        <div class="col-8">
+            <button id="randButton">Pick Random Recipe</button>
+        </div>
+    </div>
+    <div class="row no-gutter justify-content-center">
+        <div class="col-3">
+            <div class="border rounded border-dark p-3" style="overflow-y:scroll; height:450px">
+                <h5>Recipe list</h5>
+                {% for item in recipeList %}
+                    <a href="/mam/{{ item.id }}">
+                    <div id='r-bd' class="border border-dark rounded m-3 p-3">
+                    <h4>{{ item.name }}</h4>
+                    <h5>Time it takes to make this dish: {{ item.timeTakenToMake }} mins</h5>
+                    <h5>Is this food wet (scale 1 to 5): {{ item.wetness }}</h5>
+                    </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-6">
+            <div class="border rounded border-dark p-3" style='height:100%'>
+                {% if clicked %}
+                    <h4>{{ info.name }}</h4>
+                    <h5>Total Cost: £{{ cost }}</h5>
+                    <h5>{{ info.instructions|safe }}</h5>
+
+                {% else %}
+                    <h4>Click a recipe to get started :)</h4>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="col-3">
+            <div class="border rounded border-dark p-3" style='height:100%'>
+                {% if clicked %}
+                    <h4>Ingredients</h4>
+                    <ul>
+                    {% for i in list %}
+                        {% if cost != 0.0 %}
+                            <h5><li>{{ i.name }} - £{{ i.cost }}</li></h5>
+                        {% else %}
+                            <h5><li>{{ i.name }}</li></h5>
+                        {% endif %}
+
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        let x = document.getElementById('randButton');
+        x.addEventListener('click', genRandRecipe);
+
+        document.getElementById('l').style.height = String(screen.height) + 'px';
+
+        function genRandRecipe(){
+            let y = Math.floor(Math.random() * {{ numRecipes }}) + 1;
+            location.href = '/mam/' + String(y);
+        }
+    </script>
+{% endblock %}
+

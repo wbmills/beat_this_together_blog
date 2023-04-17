@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Make a Meal</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+</head>
+<body style="height:100vh">
+
+<div class="container-fluid mx-2 my-4">
+<h1>
+{% block title %}
+{% endblock %}
+</h1>
+</div>
+
+<p>
+{% block content %}
+{% endblock %}
+</p>
+
+<a class="dropdown-item" href='/mam'>Go Home</a>
+<a class="dropdown-item" href=/mam/create>Create a New Recipe</a>
+<a class="dropdown-item" href=/mam/frank>Frank Fan Club: Members ONLY</a>
+
+</body>
+</html>

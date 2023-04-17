@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    #myContainer {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+
+#myAnimation {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: #ff0000;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Playing with Javascript</title>
+</head>
+<body>
+This is a page for playing with javascript
+<button onclick="createParagraph()">Click me!</button>
+
+<h1>Number Guessing Game</h1>
+<form>
+    <label for="guess">Guess a Number:</label>
+    <input type="number" id="guess"></form>
+    <p><button onclick="checkNumber()">Submit and Check!</button></p>
+<script src={% static "/js/tutorial.js" %} defer></script>
+
+<div class="container-fluid" id="myContainer">
+    <div class="row">
+        <div class="col">
+            <input id="clickme" type="button" value="Click Me" onclick="myMove();" />
+        </div>
+        <div class="col">
+           <div id="myAnimation">.</div>
+        </div>
+        <div class="col">
+            <script src={% static '/js/tutorial2.js' %} defer>
+
+            </script>
+
+            </script>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
