@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     "members",
     'bootstrap5',
     'meal_maker_app',
+    "multiselectfield",
+
 ]
 
 MIDDLEWARE = [
