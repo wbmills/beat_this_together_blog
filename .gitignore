@@ -1,6 +1,4 @@
 /static/js/
 .env/
-.venv/
 env/
-venv/
 *.env
