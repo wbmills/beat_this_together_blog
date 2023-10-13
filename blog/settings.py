@@ -134,11 +134,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-if (DEBUG):
-    STATICFILES_DIRS = [BASE_DIR / 'staticfiles',]
-else:
-    STATIC_ROOT = BASE_DIR / 'static'
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [BASE_DIR / 'static',]
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 CSRF_TRUSTED_ORIGINS = ['https://www.beatthistogether.com', 'https://web-production-ab29.up.railway.app']
 
