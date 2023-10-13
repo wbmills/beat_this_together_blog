@@ -13,5 +13,5 @@ urlpatterns = [
     path('blog/<int:id>', views.blogItem, name="blogItem"),
     path('resources', views.resources, name="resources"),
     path('videos', views.videos, name='videos'),
-    #path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico')))
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('favicon.ico')))
 ]

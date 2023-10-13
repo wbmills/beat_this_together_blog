@@ -38,10 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     "members",
     'bootstrap5',
     "multiselectfield",
+    #'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
