@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     "members",
     'bootstrap5',
     "multiselectfield",
-    #'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +140,6 @@ STATICFILES_DIRS = (
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
