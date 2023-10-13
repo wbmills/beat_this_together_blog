@@ -136,7 +136,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles/'
-
+STATICFILES_DIRS = (BASE_DIR / 'staticfiles/', )
 CSRF_TRUSTED_ORIGINS = ['https://www.beatthistogether.com', 'https://web-production-ab29.up.railway.app']
 
 STATICFILES_DIRS = (
