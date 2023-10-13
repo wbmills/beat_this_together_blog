@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import RequestContext
-from random import randint
 from .models import Member, Entry, Author, Tags, UsefulLinks, Videos
 import os
 
