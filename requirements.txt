@@ -6,7 +6,7 @@ Django==4.2.6
 django-bootstrap-v5==1.0.11
 django-bootstrap5==23.3
 django-multiselectfield==0.1.12
-Pillow @ file:///C:/Users/willb/Downloads/Pillow-9.1.1-cp39-cp39-win32.whl#sha256=55e74faf8359ddda43fee01bffbc5bd99d96ea508d8a08c527099e84eb708f45
+Pillow
 pip-freezer==0.3.5
 psycopg2==2.9.9
 soupsieve==2.5
