@@ -35,11 +35,9 @@
     <div class="container-fluid border-top">
     <div class="row no-gutters justify-content-center align-items-center my-5">
 
-        <!-- Instagram Feed from Plugin-->
-        <div class="container-fluid justify-content-center my-5 d-flex">
-            <div class='sk-instagram-feed' data-embed-id='131945'></div>
-            <script src='https://widgets.sociablekit.com/instagram-feed/widget.js' async defer></script>
-        </div>
+<!-- Place <div> tag where you want the feed to appear -->
+<div id="curator-feed-default-feed-layout"><a href="https://curator.io" target="_blank" class="crt-logo crt-tag">Powered by Curator.io</a></div>
+
 
     <div class="col-md-4 d-none d-md-block"> <!--For the left pointing arrow-->
         <h1><b>Who We Are</b></h1>
@@ -67,5 +65,14 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript">
+    /* curator-feed-default-feed-layout */
+    (function(){
+    var i,e,d=document,s="script";i=d.createElement("script");i.async=1;i.charset="UTF-8";
+    i.src="https://cdn.curator.io/published/fd8cd94c-c846-4190-9b08-ff1ab756421d.js";
+    e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+    })();
+</script>
 {% endblock %}
 
